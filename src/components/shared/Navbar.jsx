@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../../assets/logo.png";
 import { FaHeart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaCartShopping } from "react-icons/fa6";
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const sentinel = document.querySelector("#hero-sentinel");
+
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      {
+        rootMargin: "-80px 0px 0px 0px",
+        threshold: 0,
+      }
+    );
+
+    observer.observe(sentinel);
+
+    return () => observer.disconnect();
+  }, []);
+
   const links = (
     <>
       <li>
@@ -29,7 +52,11 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="fixed w-full top-0 z-50 ">
+    <nav
+      className={`fixed w-full top-0 z-50 ${
+        scrolled ? "bg-white shadow-sm" : ""
+      }`}
+    >
       <div className="navbar relative py-7 max-w-7xl mx-auto px-4 md:px-0">
         <div className="navbar-start">
           <Link to="/">
@@ -42,39 +69,45 @@ const Navbar = () => {
         <div className="navbar-end gap-4.75 text-sm">
           <NavLink
             to="/favorites"
-            className={`hidden md:flex items-center gap-1`}
+            className={`hidden md:flex items-center gap-1 ${
+              scrolled ? "text-black" : "text-white"
+            }`}
           >
-            <FaHeart size={18} /> Favorites
+            <FaHeart size={18} color={scrolled ? "#749B3F" : "white"} />{" "}
+            Favorites
           </NavLink>
-          <NavLink to="/cart" className="flex items-center gap-2">
+          <NavLink
+            to="/cart"
+            className={`flex items-center gap-2 ${
+              scrolled ? "text-black" : "text-white"
+            }`}
+          >
             <div className="indicator">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {" "}
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />{" "}
-              </svg>
-              <span className="w-4 h-4 flex items-center justify-center text-white bg-red-500 rounded-full indicator-item text-xs">
+              <FaCartShopping
+                size={18}
+                color={scrolled ? "#749B3F" : "white"}
+              />
+              <span className="w-4 h-4 flex items-center justify-center text-white bg-red-500 rounded-full indicator-item text-xs border border-white">
                 8
               </span>
             </div>
             <h3 className="hidden md:block">Cart</h3>
           </NavLink>
-          <button className="border hidden md:block cursor-pointer font-semibold py-2.5 px-5 rounded-sm">
+          <button
+            className={`hidden md:block cursor-pointer font-semibold py-2.5 px-5 rounded-sm ${
+              scrolled
+                ? "border border-black text-black"
+                : "border border-white text-white "
+            }`}
+          >
             Sign in
           </button>
           <div className="dropdown dropdown-left">
             <div tabIndex={0} role="button" className="lg:hidden">
-              <GiHamburgerMenu size={20} />
+              <GiHamburgerMenu
+                size={20}
+                color={scrolled ? "#749B3F" : "white"}
+              />
             </div>
             <ul
               tabIndex="-1"
@@ -85,7 +118,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
