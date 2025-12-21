@@ -42,10 +42,10 @@ const OurProducts = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-42">
         <div className="text-center mb-10">
-          <span className="inline-block bg-[#f1f5ec] rubik-font text-[#749b3f] text-md font-semibold px-4 py-2 rounded-md mb-3">
+          <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
             Our Products
           </span>
-          <h2 className="text-3xl md:text-6xl font-semibold text-gray-900 mb-2 rubik-font">
+          <h2 className="text-3xl md:text-6xl font-semibold text-gray-900 mb-2 mt-4 rubik-font">
             Our Fresh Products
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -96,7 +96,7 @@ const OurProducts = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-8 py-3 border border-orange-500 text-orange-500 rounded-md hover:bg-[#FF6A1A] hover:text-white transition cursor-pointer">
+          <button className="px-8 py-3 border border-[#FF6A1A] text-[#FF6A1A] rounded-md hover:bg-[#FF6A1A] hover:text-white transition cursor-pointer font-semibold">
             See All Products
           </button>
         </div>
