@@ -12,7 +12,7 @@ const About = () => {
         <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
           About us
         </span>
-        <h3 className="font-medium text-[32px] md:text-[48px] mt-4">
+        <h3 className="font-semibold text-[32px] md:text-[48px] mt-4">
           About Fresh Harvest
         </h3>
         <p className="max-w-[461px] font-normal text-sm text-[#4A4A52]">
