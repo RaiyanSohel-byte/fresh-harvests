@@ -7,3 +7,17 @@ body {
 .questrial {
   font-family: "Questrial", sans-serif;
 }
+
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #d1d5db !important;
+  opacity: 1 !important;
+  border-radius: 9999px !important;
+  transition: all 0.3s ease !important;
+  margin-top: 64px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #749b3f !important;
+}

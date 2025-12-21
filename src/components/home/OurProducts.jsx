@@ -45,7 +45,7 @@ const OurProducts = () => {
           <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
             Our Products
           </span>
-          <h2 className="text-3xl md:text-6xl font-semibold text-gray-900 mb-2 mt-4 rubik-font">
+          <h2 className="text-[32px] max-w-[297px] md:max-w-5xl mx-auto md:text-5xl font-semibold text-gray-900 mb-2 mt-4 ">
             Our Fresh Products
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">

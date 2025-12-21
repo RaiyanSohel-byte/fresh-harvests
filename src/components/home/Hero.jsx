@@ -30,7 +30,7 @@ const Hero = () => {
           }}
         ></div>
       </div>
-      <img src={leaf1} alt="leaf" className="absolute hidden md:block" />
+      <img src={leaf1} alt="leaf" className="absolute top-30 hidden md:block" />
 
       <div className="max-w-7xl mx-auto">
         <div className="relative">
