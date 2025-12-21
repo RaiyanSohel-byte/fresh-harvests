@@ -29,8 +29,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-primary/0 py-7 max-w-7xl mx-auto px-4 md:px-0">
+    <div className="fixed w-full top-0 z-50 ">
+      <div className="navbar relative py-7 max-w-7xl mx-auto px-4 md:px-0">
         <div className="navbar-start">
           <Link to="/">
             <img src={logo} alt="" className="w-56" />
