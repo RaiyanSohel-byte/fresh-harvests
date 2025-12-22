@@ -32,7 +32,7 @@ const Testimonial = () => {
         <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
           Testimonial
         </span>
-        <h2 className="text-[32px] max-w-[300px] md:max-w-5xl mx-auto md:text-6xl font-semibold text-gray-900 mb-2 mt-4 rubik-font">
+        <h2 className="text-[32px] max-w-[300px] lg:max-w-5xl mx-auto lg:text-6xl font-semibold text-gray-900 mb-2 mt-4 rubik-font">
           What Our Customers Say
         </h2>
         <p className="text-gray-500 max-w-xl mx-auto">
@@ -51,7 +51,7 @@ const Testimonial = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="md:flex items-center gap-[83px] relative py-8 lg:py-12">
+            <div className="lg:flex items-center gap-[83px] relative py-8 lg:py-12">
               <img
                 src={testimonialVector}
                 alt="vector"
@@ -60,17 +60,17 @@ const Testimonial = () => {
               <img
                 src={testimonial}
                 alt="testimonial"
-                className="mx-auto mb-6 md:mb-0"
+                className="mx-auto mb-6 lg:mb-0"
               />
               <div className="bg-[#F4F6F6] p-8 rounded-3xl">
-                <p className="text-[#4A4A52] questrial text-[14px] md:text-[20px] mb-8 max-w-[579px]">
+                <p className="text-[#4A4A52] questrial text-[14px] lg:text-[20px] mb-8 max-w-[579px]">
                   "I absolutely love Fresh Harvest! The quality of their produce
                   is outstanding. It's always fresh, flavorful, and delicious.
                   The convenience of ordering online and having it delivered to
                   my doorstep saves me so much time. Fresh Harvest has become my
                   go-to for all my fruit and vegetable needs.
                 </p>
-                <p className="text-[#4A4A52] questrial text-[14px] md:text-[20px] font-normal">
+                <p className="text-[#4A4A52] questrial text-[14px] lg:text-[20px] font-normal">
                   <span className="font-bold">Jane Doe -</span> Professional
                   chef
                 </p>
@@ -78,7 +78,7 @@ const Testimonial = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="md:flex items-center gap-[83px] relative py-14 lg:py-22">
+            <div className="lg:flex items-center gap-[83px] relative py-14 lg:py-22">
               <img
                 src={testimonialVector}
                 alt="vector"
@@ -87,17 +87,17 @@ const Testimonial = () => {
               <img
                 src={testimonial}
                 alt="testimonial"
-                className="mx-auto mb-6 md:mb-0"
+                className="mx-auto mb-6 lg:mb-0"
               />
               <div className="bg-[#F4F6F6] p-8 rounded-3xl">
-                <p className="text-[#4A4A52] questrial text-[14px] md:text-[20px] mb-8 max-w-[579px]">
+                <p className="text-[#4A4A52] questrial text-[14px] lg:text-[20px] mb-8 max-w-[579px]">
                   "I absolutely love Fresh Harvest! The quality of their produce
                   is outstanding. It's always fresh, flavorful, and delicious.
                   The convenience of ordering online and having it delivered to
                   my doorstep saves me so much time. Fresh Harvest has become my
                   go-to for all my fruit and vegetable needs.
                 </p>
-                <p className="text-[#4A4A52] questrial text-[14px] md:text-[20px] font-normal">
+                <p className="text-[#4A4A52] questrial text-[14px] lg:text-[20px] font-normal">
                   <span className="font-bold">Jane Doe -</span> Professional
                   chef
                 </p>
@@ -105,7 +105,7 @@ const Testimonial = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="md:flex items-center gap-[83px] relative py-8 lg:py-12">
+            <div className="lg:flex items-center gap-[83px] relative py-8 lg:py-12">
               <img
                 src={testimonialVector}
                 alt="vector"
@@ -114,17 +114,17 @@ const Testimonial = () => {
               <img
                 src={testimonial}
                 alt="testimonial"
-                className="mx-auto mb-6 md:mb-0"
+                className="mx-auto mb-6 lg:mb-0"
               />
               <div className="bg-[#F4F6F6] p-8 rounded-3xl">
-                <p className="text-[#4A4A52] questrial text-[14px] md:text-[20px] mb-8 max-w-[579px]">
+                <p className="text-[#4A4A52] questrial text-[14px] lg:text-[20px] mb-8 max-w-[579px]">
                   "I absolutely love Fresh Harvest! The quality of their produce
                   is outstanding. It's always fresh, flavorful, and delicious.
                   The convenience of ordering online and having it delivered to
                   my doorstep saves me so much time. Fresh Harvest has become my
                   go-to for all my fruit and vegetable needs.
                 </p>
-                <p className="text-[#4A4A52] questrial text-[14px] md:text-[20px] font-normal">
+                <p className="text-[#4A4A52] questrial text-[14px] lg:text-[20px] font-normal">
                   <span className="font-bold">Jane Doe -</span> Professional
                   chef
                 </p>

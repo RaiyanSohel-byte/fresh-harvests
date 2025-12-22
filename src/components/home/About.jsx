@@ -2,17 +2,17 @@ import React from "react";
 import aboutImg from "../../assets/aboutImage.png";
 const About = () => {
   return (
-    <div className="md:flex items-center justify-between max-w-7xl mx-auto">
+    <div className="lg:flex items-center justify-between max-w-7xl mx-auto">
       <img
         src={aboutImg}
         alt="about"
-        className="mt-16 mb-6 md:mb-0 md:-mt-14"
+        className="mt-16 mb-6 lg:mb-0 lg:-mt-14"
       />
-      <div className="mx-auto px-4 md:px-0">
+      <div className="mx-auto px-4 lg:px-0">
         <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
           About us
         </span>
-        <h3 className="font-semibold text-[32px] md:text-[48px] mt-4">
+        <h3 className="font-semibold text-[32px] lg:text-[48px] mt-4">
           About Fresh Harvest
         </h3>
         <p className="max-w-[461px] font-normal text-sm text-[#4A4A52]">

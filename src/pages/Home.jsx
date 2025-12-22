@@ -4,7 +4,7 @@ import OurProducts from "../components/home/OurProducts";
 import About from "../components/home/About";
 import SpecialOffer from "../components/home/SpecialOffer";
 import Testimonial from "../components/home/Testimonial";
-import Blog from "../components/home/Blog";
+import Blog from "../components/home/blogs/Blog";
 
 const Home = () => {
   return (

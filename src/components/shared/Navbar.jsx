@@ -52,12 +52,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav
-      className={`fixed w-full top-0 z-50 ${
-        scrolled ? "bg-white shadow-sm" : ""
-      }`}
-    >
-      <div className="navbar relative py-7 max-w-7xl mx-auto px-4 md:px-0">
+    <nav className={`fixed w-full top-0 z-50 ${scrolled ? "bg-white" : ""}`}>
+      <div className="navbar relative py-7 max-w-7xl mx-auto px-4 lg:px-0">
         <div className="navbar-start">
           <Link to="/">
             <img src={logo} alt="" className="w-56" />
@@ -69,7 +65,7 @@ const Navbar = () => {
         <div className="navbar-end gap-4.75 text-sm">
           <NavLink
             to="/favorites"
-            className={`hidden md:flex items-center gap-1 ${
+            className={`hidden lg:flex items-center gap-1 ${
               scrolled ? "text-black" : "text-white"
             }`}
           >
@@ -91,10 +87,10 @@ const Navbar = () => {
                 8
               </span>
             </div>
-            <h3 className="hidden md:block">Cart</h3>
+            <h3 className="hidden lg:block">Cart</h3>
           </NavLink>
           <button
-            className={`hidden md:block cursor-pointer font-semibold py-2.5 px-5 rounded-sm ${
+            className={`hidden lg:block cursor-pointer font-semibold py-2.5 px-5 rounded-sm ${
               scrolled
                 ? "border border-black text-black"
                 : "border border-white text-white "

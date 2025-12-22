@@ -25,27 +25,27 @@ const products = [
 
 const OurProducts = () => {
   return (
-    <section className="md:pt-16 overflow-hidden">
+    <section className="lg:pt-16 overflow-hidden">
       <div className="relative">
         <img
           src={leaf2}
           alt=""
-          className="absolute md:left-40 top-34 md:top-14 rotate-45"
+          className="absolute lg:left-40 top-34 lg:top-14 rotate-45"
         />
       </div>
       <div className="relative">
         <img
           src={leaf3}
           alt=""
-          className="absolute right-2 md:right-32 top-4 md:-top-25 -rotate-32"
+          className="absolute right-2 lg:right-32 top-4 lg:-top-25 -rotate-32"
         />
       </div>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-42">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-42">
         <div className="text-center mb-10">
           <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
             Our Products
           </span>
-          <h2 className="text-[32px] max-w-[350px] md:max-w-5xl mx-auto md:text-5xl font-semibold text-gray-900 mb-2 mt-4 ">
+          <h2 className="text-[32px] max-w-[350px] lg:max-w-5xl mx-auto lg:text-5xl font-semibold text-gray-900 mb-2 mt-4 ">
             Our Fresh Products
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -69,7 +69,7 @@ const OurProducts = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
               key={product.id}
