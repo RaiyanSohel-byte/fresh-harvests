@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import logo from "../../assets/footerLogo.png";
 import appStore from "../../assets/appStoreFooter.png";
-import playStore from "../../assets/googlePlayFooter.png";
+import playStore from "../../assets/googleplayFooter.png";
 import visa from "../../assets/Visa.png";
 import paypal from "../../assets/Paypal.png";
 import applePlay from "../../assets/ApplePay.png";
