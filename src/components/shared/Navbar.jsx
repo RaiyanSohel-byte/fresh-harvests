@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/logo.png";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
 import { TiThMenu } from "react-icons/ti";
