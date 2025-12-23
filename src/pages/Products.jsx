@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
 import ProductCard from "../components/ProductCard/ProductCard";
 
 const Products = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const { data: categories = [] } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const res = await useAxios.get("/category");
+      return res.data.data;
+    },
+  });
+
   const {
     data: products = [],
     isLoading,
@@ -15,6 +25,11 @@ const Products = () => {
       return res.data.data;
     },
   });
+
+  const filteredProducts =
+    activeCategory === "All"
+      ? products
+      : products.filter((product) => product.categoryId === activeCategory);
 
   if (isLoading) {
     return (
@@ -47,13 +62,40 @@ const Products = () => {
         </p>
       </div>
 
-      {products.length === 0 ? (
+      <div className="flex justify-center gap-3 mb-12 flex-wrap">
+        <button
+          onClick={() => setActiveCategory("All")}
+          className={`px-4 py-2 rounded-md border text-sm rubik-font ${
+            activeCategory === "All"
+              ? "bg-[#749b3f] text-white border-[#749b3f]"
+              : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+          }`}
+        >
+          All
+        </button>
+
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            onClick={() => setActiveCategory(category.id)}
+            className={`px-4 py-2 rounded-md border text-sm rubik-font ${
+              activeCategory === category.id
+                ? "bg-[#749b3f] text-white border-[#749b3f]"
+                : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+            }`}
+          >
+            {category.categoryName}
+          </button>
+        ))}
+      </div>
+
+      {filteredProducts.length === 0 ? (
         <div className="col-span-full text-center text-gray-500 text-lg font-medium py-12">
           No products found in this category
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
         </div>
