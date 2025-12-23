@@ -19,7 +19,6 @@ const Hero = () => {
         id="hero-sentinel"
         className="absolute right-0 top-0 w-20 lg:w-[10%] lg:w-[26.56%] h-full bg-[#749B3F] z-0"
       >
-        {/* Pattern Overlay */}
         <div
           className="w-full h-full"
           style={{
@@ -64,7 +63,6 @@ const Hero = () => {
             />
           </div>
 
-          {/* offer */}
           <div className="relative">
             <div className="bg-[#EBEBEB] flex justify-between items-center absolute px-4 py-4 mt-8 ml-4 lg:mt-0 lg:ml-0 lg:left-44 lg:top-4 rounded-xl">
               <div className="space-y-0.75">
@@ -74,7 +72,7 @@ const Hero = () => {
                 <h3 className="text-md lg:text-[28px] font-medium text-[#212337]">
                   Fresh Salad
                 </h3>
-                {/* special offer */}
+
                 <div className="flex items-center gap-1">
                   <p className="text-[10px] lg:text-[16px] font-medium text-[#176D38]">
                     Up to
@@ -85,7 +83,7 @@ const Hero = () => {
                     className="w-10 lg:w-[72px]"
                   />
                 </div>
-                {/* badge */}
+
                 <h3 className="badge rounded-full badge-xs lg:badge-md text-[6px] lg:text-xs font-semibold text-white bg-[#176D38]">
                   CODE : <span className="text-[#FAC714]">FRESH25</span>
                 </h3>
@@ -97,7 +95,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          {/* download */}
+
           <div className="relative hidden lg:block top-48 -left-10">
             <img src={leaf2} alt="leaf2" className="absolute" />
           </div>
