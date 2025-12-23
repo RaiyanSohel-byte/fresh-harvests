@@ -92,7 +92,7 @@ const ProductDetails = () => {
             {product.category.categoryName}
           </span>
 
-          <h1 className="text-3xl lg:text-4xl font-semibold my-2">
+          <h1 className="text-3xl lg:text-4xl font-semibold my-4">
             {productName}
           </h1>
 
@@ -106,15 +106,15 @@ const ProductDetails = () => {
 
           <p className="text-gray-500 leading-relaxed mb-8">{description}</p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="lg:flex flex-wrap gap-4 space-y-5 lg:space-y-0">
             <button
               disabled={stock === 0}
-              className="bg-[#FF6A1A] text-white px-10 py-3 rounded-lg font-semibold hover:bg-[#e55c15] transition disabled:opacity-50"
+              className="bg-[#FF6A1A] text-white px-10 py-3 rounded-lg font-semibold hover:bg-[#e55c15] transition lg:w-[280px] disabled:opacity-50 w-full"
             >
               Add to cart
             </button>
 
-            <button className="bg-gray-100 px-8 py-3 rounded-lg font-medium">
+            <button className="bg-gray-100 px-8 py-3 w-full lg:w-[280px] rounded-lg font-medium">
               Save as favorite
             </button>
           </div>
@@ -161,7 +161,7 @@ const ProductDetails = () => {
 
       <div className="text-center mb-10 mt-30">
         <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
-          Our Products
+          Related Products
         </span>
         <h2 className="text-[32px] max-w-[350px] lg:max-w-5xl mx-auto lg:text-5xl font-semibold text-gray-900 mb-2 mt-4">
           Related Products

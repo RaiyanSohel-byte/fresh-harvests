@@ -104,7 +104,7 @@ const Navbar = () => {
               >
                 Blog
               </NavLink>
-              {userRole === "ADMIN" && (
+              {isLoggedIn && userRole === "ADMIN" && (
                 <NavLink
                   to="/dashboard"
                   className="text-sm hover:text-green-600 questrial"
@@ -135,19 +135,14 @@ const Navbar = () => {
                 Cart
               </div>
 
-              {isLoggedIn && userRole === "ADMIN" && (
-                <NavLink
-                  to="/admin"
-                  className="px-4 py-2 rounded-md bg-orange-500 text-white font-semibold"
-                >
-                  Admin
-                </NavLink>
-              )}
-
               {isLoggedIn ? (
                 <button
                   onClick={handleLogout}
-                  className="px-5 py-2 rounded-md font-semibold border border-black text-black"
+                  className={`border px-5 py-2 rounded-md font-semibold ${
+                    isScrolled
+                      ? "border-black text-black"
+                      : "border-white text-white"
+                  }`}
                 >
                   Sign out
                 </button>
