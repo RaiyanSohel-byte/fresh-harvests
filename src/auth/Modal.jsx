@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import useAxios from "../hooks/useAxios";
+import orSignIn from "../assets/Or Sign In with.png";
 
 const Modal = ({ isOpen, onClose, setIsLoggedIn, setUserRole }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -91,12 +92,13 @@ const Modal = ({ isOpen, onClose, setIsLoggedIn, setUserRole }) => {
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           {isSignup && (
-            <div>
+            <div className="questrial">
+              <h3 className="mb-2">Your Name</h3>
               <input
                 type="text"
                 placeholder="Your name"
                 {...register("fullName", { required: "Name is required" })}
-                className="w-full py-4 px-4 border rounded-lg"
+                className="w-full py-4 px-4 border border-[#D9D9D9] rounded-lg"
               />
               {errors.fullName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -106,12 +108,13 @@ const Modal = ({ isOpen, onClose, setIsLoggedIn, setUserRole }) => {
             </div>
           )}
 
-          <div>
+          <div className="questrial">
+            <h3 className="mb-2">Email</h3>
             <input
               type="email"
               placeholder="Email address"
               {...register("email", { required: "Email is required" })}
-              className="w-full py-4 px-4 border rounded-lg"
+              className="w-full py-4 px-4 border border-[#D9D9D9] rounded-lg"
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">
@@ -121,7 +124,8 @@ const Modal = ({ isOpen, onClose, setIsLoggedIn, setUserRole }) => {
           </div>
 
           <div>
-            <div className="relative">
+            <div className="relative questrial">
+              <h3 className="mb-2">Password</h3>
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
@@ -132,12 +136,12 @@ const Modal = ({ isOpen, onClose, setIsLoggedIn, setUserRole }) => {
                     message: "Minimum 6 characters",
                   },
                 })}
-                className="w-full py-4 px-4 border rounded-lg pr-12"
+                className="w-full py-4 px-4 border border-[#D9D9D9] rounded-lg pr-12"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2"
+                className="absolute right-4 top-15 cursor-pointer -translate-y-1/2"
               >
                 {showPassword ? <FiEyeOff /> : <FiEye />}
               </button>
@@ -165,19 +169,19 @@ const Modal = ({ isOpen, onClose, setIsLoggedIn, setUserRole }) => {
         </form>
 
         <div className="my-6 text-center text-gray-500 text-sm">
-          Or continue with
+          <img src={orSignIn} alt="" />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <button className="border py-3 rounded-lg flex items-center justify-center gap-2">
+          <button className="border border-gray-300 py-3 rounded-lg flex items-center justify-center gap-2">
             <FcGoogle size={22} /> Google
           </button>
-          <button className="border py-3 rounded-lg flex items-center justify-center gap-2">
+          <button className="border border-gray-300 py-3 rounded-lg flex items-center justify-center gap-2">
             <BsFacebook size={22} className="text-blue-600" /> Facebook
           </button>
         </div>
 
-        <p className="mt-6 text-center text-sm">
+        <p className="mt-6 text-center text-sm font-semibold">
           {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
           <button
             onClick={() => setIsSignup(!isSignup)}

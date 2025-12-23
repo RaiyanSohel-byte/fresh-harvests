@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
 import ProductCard from "../components/ProductCard/ProductCard";
+import cartImg from "../assets/Shopping cart.png";
+import favImg from "../assets/Save Button Icon.png";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -105,17 +107,28 @@ const ProductDetails = () => {
           </p>
 
           <p className="text-gray-500 leading-relaxed mb-8">{description}</p>
-
+          <div className="flex items-center gap-6 my-4">
+            <span className="text-gray-700 font-semibold rubik-font">
+              Quantity
+            </span>
+            <div className="flex items-center border border-gray-300 rounded-lg">
+              <span className="px-4 py-2">-</span>
+              <span className="px-6 py-2 border-x border-gray-300 font-bold rubik-font">
+                1
+              </span>
+              <span className="px-4 py-2">+</span>
+            </div>
+            <span className="text-gray-500">/kg</span>
+          </div>
           <div className="lg:flex flex-wrap gap-4 space-y-5 lg:space-y-0">
+            <button className="bg-gray-100 py-4 gap-2 w-full lg:w-[280px] rounded-lg font-medium flex items-center justify-center">
+              <img src={favImg} alt="" className="w-6" /> Save as favorite
+            </button>
             <button
               disabled={stock === 0}
-              className="bg-[#FF6A1A] text-white px-10 py-3 rounded-lg font-semibold hover:bg-[#e55c15] transition lg:w-[280px] disabled:opacity-50 w-full"
+              className="bg-[#FF6A1A] text-white flex items-center justify-center py-4 rounded-lg font-semibold hover:bg-[#e55c15] transition gap-2 lg:w-[280px] disabled:opacity-50 w-full"
             >
-              Add to cart
-            </button>
-
-            <button className="bg-gray-100 px-8 py-3 w-full lg:w-[280px] rounded-lg font-medium">
-              Save as favorite
+              <img src={cartImg} alt="" className="w-6" /> Add to cart
             </button>
           </div>
         </div>
@@ -136,10 +149,10 @@ const ProductDetails = () => {
 
           <button
             onClick={() => setActiveTab("reviews")}
-            className={`px-6 py-3 rounded-lg text-lg font-medium ${
+            className={`px-6 py-3 rounded-lg text-lg text-[#A6A6A6] ${
               activeTab === "reviews"
                 ? "bg-[#749B3F] text-white"
-                : "bg-gray-100 text-gray-600"
+                : "bg-white text-gray-600 border border-gray-300"
             }`}
           >
             Reviews (1)

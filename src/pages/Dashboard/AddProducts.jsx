@@ -11,16 +11,12 @@ const AddProducts = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [newCategoryName, setNewCategoryName] = useState("");
 
-  const axiosCategory = axios.create({
-    baseURL: "/api/v1",
-  });
-
   const selectedCategory = watch("categoryId");
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axiosCategory.get("/category");
+        const res = await useAxios.get("/category");
         setCategories(res.data?.data || []);
       } catch (err) {
         console.log(err);
@@ -38,7 +34,7 @@ const AddProducts = () => {
       let categoryId = data.categoryId;
 
       if (newCategoryName.trim()) {
-        const res = await axiosCategory.post("/category", {
+        const res = await useAxios.post("/category", {
           categoryName: newCategoryName.trim(),
         });
         categoryId = res.data?.data?.id;
