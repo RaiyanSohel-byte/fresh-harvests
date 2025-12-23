@@ -100,32 +100,52 @@ const Navbar = () => {
             <ul className="hidden md:flex items-center gap-12 text-[#4A4A52] font-medium">
               <NavLink
                 to="/"
-                className="text-sm hover:text-green-600 questrial"
+                className={({ isActive }) =>
+                  `text-sm hover:text-[#749b3f] questrial ${
+                    isActive && "border-b-2 border-[#749b3f]"
+                  }`
+                }
               >
                 Home
               </NavLink>
               <NavLink
                 to="/shop"
-                className="text-sm hover:text-green-600 questrial"
+                className={({ isActive }) =>
+                  `text-sm hover:text-[#749b3f] questrial ${
+                    isActive && "border-b-2 border-[#749b3f]"
+                  }`
+                }
               >
                 Shop
               </NavLink>
               <NavLink
                 to="/about"
-                className="text-sm hover:text-green-600 questrial"
+                className={({ isActive }) =>
+                  `text-sm hover:text-[#749b3f] questrial ${
+                    isActive && "border-b-2 border-[#749b3f]"
+                  }`
+                }
               >
                 About us
               </NavLink>
               <NavLink
                 to="/blog"
-                className="text-sm hover:text-green-600 questrial"
+                className={({ isActive }) =>
+                  `text-sm hover:text-[#749b3f] questrial ${
+                    isActive && "border-b-2 border-[#749b3f]"
+                  }`
+                }
               >
                 Blog
               </NavLink>
               {isLoggedIn && userRole === "ADMIN" && (
                 <NavLink
                   to="/dashboard"
-                  className="text-sm hover:text-green-600 questrial"
+                  className={({ isActive }) =>
+                    `text-sm hover:text-[#749b3f] questrial ${
+                      isActive && "border-b-2 border-[#749b3f]"
+                    }`
+                  }
                 >
                   Dashboard
                 </NavLink>
@@ -195,7 +215,7 @@ const Navbar = () => {
               </div>
               <button onClick={() => setMenuOpen(!menuOpen)}>
                 <TiThMenu
-                  color={heroStyle ? "white" : "black"}
+                  color={heroStyle ? "white" : "#749b3f"}
                   className="text-2xl"
                 />
               </button>
@@ -205,25 +225,49 @@ const Navbar = () => {
           {menuOpen && (
             <ul className="md:hidden bg-white shadow-lg rounded-lg mx-4 mt-4 p-5 space-y-4 ">
               <li>
-                <NavLink to="/" onClick={() => setMenuOpen(false)}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive && "border-b-2 border-[#749b3f] text-[#749b3f]"
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
                   Home
                 </NavLink>
               </li>
               <li>
                 {" "}
-                <NavLink to="/shop" onClick={() => setMenuOpen(false)}>
+                <NavLink
+                  to="/shop"
+                  className={({ isActive }) =>
+                    isActive && "border-b-2 border-[#749b3f] text-[#749b3f]"
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
                   Shop
                 </NavLink>
               </li>
               <li>
                 {" "}
-                <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive && "border-b-2 border-[#749b3f] text-[#749b3f]"
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
                   About us
                 </NavLink>
               </li>
               <li>
                 {" "}
-                <NavLink to="/blog" onClick={() => setMenuOpen(false)}>
+                <NavLink
+                  to="/blog"
+                  className={({ isActive }) =>
+                    isActive && "border-b-2 border-[#749b3f] text-[#749b3f]"
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
                   Blog
                 </NavLink>
               </li>

@@ -138,10 +138,10 @@ const ProductDetails = () => {
         <div className="flex gap-4 mb-6">
           <button
             onClick={() => setActiveTab("description")}
-            className={`px-6 py-3 rounded-lg text-lg font-medium ${
+            className={`px-6 py-3 cursor-pointer rounded-lg text-lg text-[#A6A6A6] ${
               activeTab === "description"
                 ? "bg-[#749B3F] text-white"
-                : "bg-gray-100 text-gray-600"
+                : "bg-white text-gray-600 border border-gray-300"
             }`}
           >
             Description
@@ -149,7 +149,7 @@ const ProductDetails = () => {
 
           <button
             onClick={() => setActiveTab("reviews")}
-            className={`px-6 py-3 rounded-lg text-lg text-[#A6A6A6] ${
+            className={`px-6 py-3 cursor-pointer rounded-lg text-lg text-[#A6A6A6] ${
               activeTab === "reviews"
                 ? "bg-[#749B3F] text-white"
                 : "bg-white text-gray-600 border border-gray-300"
