@@ -32,7 +32,6 @@ const Navbar = () => {
   const [userRole, setUserRole] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  /* HERO + SCROLL DETECTION */
   useEffect(() => {
     const handleScroll = () => {
       const hero = document.getElementById("hero");
@@ -54,7 +53,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* AUTH CHECK */
   useEffect(() => {
     const email = getToken();
     if (!email) {
@@ -84,7 +82,6 @@ const Navbar = () => {
     toast.success("Logged out!");
   };
 
-  /* HERO STYLE CONDITION */
   const heroStyle = isOnHero && !isScrolled;
 
   return (
