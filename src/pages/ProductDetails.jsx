@@ -88,11 +88,11 @@ const ProductDetails = () => {
         </div>
 
         <div>
-          <span className="inline-block text-xs font-semibold text-[#749B3F] bg-[#749B3F1A] px-4 py-1 rounded-full mb-4">
-            Fruits
+          <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
+            {product.category.categoryName}
           </span>
 
-          <h1 className="text-3xl lg:text-4xl font-semibold mb-2">
+          <h1 className="text-3xl lg:text-4xl font-semibold my-2">
             {productName}
           </h1>
 
@@ -159,12 +159,17 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      <div className="mt-24 text-center">
-        <span className="inline-block mb-3 text-xs font-semibold text-[#749B3F] bg-[#749B3F1A] px-4 py-1 rounded-full">
+      <div className="text-center mb-10 mt-30">
+        <span className="py-1 px-3 bg-[#749B3F1A] text-[#749B3F] text-xl font-medium rounded-lg">
           Our Products
         </span>
-
-        <h2 className="text-3xl font-semibold mb-12">Related products</h2>
+        <h2 className="text-[32px] max-w-[350px] lg:max-w-5xl mx-auto lg:text-5xl font-semibold text-gray-900 mb-2 mt-4">
+          Related Products
+        </h2>
+        <p className="text-gray-500 max-w-xl mx-auto">
+          We pride ourselves on offering a wide variety of fresh and flavorful
+          fruits, vegetables, and salad ingredients.
+        </p>
 
         {relatedProducts.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

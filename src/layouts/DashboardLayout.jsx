@@ -1,93 +1,114 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
+
+const navLinkClass = ({ isActive }) =>
+  `flex items-center gap-3 px-3 py-2 rounded-md transition
+   ${
+     isActive
+       ? "bg-gray-100 text-gray-900 font-semibold"
+       : "text-gray-600 hover:bg-gray-100"
+   }`;
 
 const DashboardLayout = () => {
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open bg-gray-100">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        <nav className="navbar w-full bg-base-300">
-          <label
-            htmlFor="my-drawer-4"
-            aria-label="open sidebar"
-            className="btn btn-square btn-ghost"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2"
-              fill="none"
-              stroke="currentColor"
-              className="my-1.5 inline-block size-4"
+
+      <div className="drawer-content flex flex-col">
+        <nav className="flex items-center justify-between px-6 h-16 bg-white border-b border-gray-200 shadow-sm">
+          <div className="flex items-center gap-4">
+            <label
+              htmlFor="my-drawer-4"
+              aria-label="open sidebar"
+              className="btn btn-sm btn-ghost lg:hidden"
             >
-              <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-              <path d="M9 4v16"></path>
-              <path d="M14 10l2 2l-2 2"></path>
-            </svg>
-          </label>
-          <div className="px-4">Navbar Title</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                fill="none"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </label>
+
+            <h1 className="text-lg font-semibold text-gray-800">
+              Admin Dashboard
+            </h1>
+          </div>
+
+          <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-sm font-medium text-gray-600">
+            A
+          </div>
         </nav>
 
-        <Outlet />
+        <main className="flex-1 p-6">
+          <Outlet />
+        </main>
       </div>
 
-      <div className="drawer-side is-drawer-close:overflow-visible">
-        <label
-          htmlFor="my-drawer-4"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
-          <ul className="menu w-full grow">
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+
+        <aside className="w-64 min-h-full bg-white border-r border-gray-200">
+          <div className="h-16 flex items-center px-6 border-b border-gray-200">
+            <span className="text-lg font-bold text-gray-900">Admin Panel</span>
+          </div>
+
+          <ul className="menu px-4 py-4 space-y-1">
             <li>
-              <button
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="Homepage"
-              >
+              <NavLink to="/" end className={navLinkClass}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="2"
+                  className="w-5 h-5"
                   fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="my-1.5 inline-block size-4"
+                  strokeWidth="2"
                 >
-                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
-                  <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <path d="M3 9.5l9-7 9 7V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
                 </svg>
-                <span className="is-drawer-close:hidden">Homepage</span>
-              </button>
+                Home
+              </NavLink>
             </li>
 
             <li>
-              <button
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="Settings"
-              >
+              <NavLink to="/dashboard/manage-products" className={navLinkClass}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="2"
+                  className="w-5 h-5"
                   fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
-                  className="my-1.5 inline-block size-4"
+                  strokeWidth="2"
                 >
-                  <path d="M20 7h-9"></path>
-                  <path d="M14 17H5"></path>
-                  <circle cx="17" cy="17" r="3"></circle>
-                  <circle cx="7" cy="7" r="3"></circle>
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 8v4l3 3" />
                 </svg>
-                <span className="is-drawer-close:hidden">Settings</span>
-              </button>
+                Manage Products
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/dashboard" end className={navLinkClass}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+                Add Products
+              </NavLink>
             </li>
           </ul>
-        </div>
+        </aside>
       </div>
     </div>
   );
